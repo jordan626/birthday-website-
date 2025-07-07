@@ -1,3 +1,4 @@
+/* Background and base font */
 body {
   margin: 0;
   padding: 0;
@@ -9,7 +10,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Floating hearts */
+/* Floating hearts container */
 #heart-container {
   position: fixed;
   top: 0;
@@ -21,6 +22,7 @@ body {
   overflow: hidden;
 }
 
+/* Emoji heart styling */
 .heart {
   position: absolute;
   font-size: 20px;
@@ -43,7 +45,22 @@ body {
   }
 }
 
-/* Main content box */
+/* Cover image styling */
+.cover-photo img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  animation: fadeInCover 2s ease-in-out;
+}
+
+@keyframes fadeInCover {
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Container box for message */
 .container {
   background: rgba(0, 0, 0, 0.6);
   padding: 30px;
@@ -55,6 +72,7 @@ body {
   z-index: 10;
 }
 
+/* Title style */
 h1 {
   font-size: 36px;
   font-family: 'Pacifico', cursive;
@@ -63,7 +81,7 @@ h1 {
   text-shadow: 2px 2px 4px #000;
 }
 
-/* Message text */
+/* Typewriter text */
 .typewriter-text {
   font-size: 18px;
   font-style: italic;
@@ -74,7 +92,7 @@ h1 {
   text-shadow: 1px 1px 2px #000;
 }
 
-/* Cursor */
+/* Blinking cursor */
 .cursor {
   display: inline-block;
   width: 10px;
@@ -103,22 +121,7 @@ button {
   cursor: pointer;
 }
 
-/* Cover Image */
-.cover-photo img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 0 0 20px 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  animation: fadeInCover 2s ease-in-out;
-}
-
-@keyframes fadeInCover {
-  from { opacity: 0; transform: scale(1.05); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-/* Gallery */
+/* Photo Gallery */
 .cinema-gallery {
   display: flex;
   flex-wrap: wrap;
