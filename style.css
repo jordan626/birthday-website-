@@ -10,6 +10,18 @@ body {
   overflow-x: hidden;
 }
 
+/* 💖 Heart Container */
+#heart-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
 /* 🎁 Main Container for Message */
 .container {
   background: rgba(0, 0, 0, 0.5);
@@ -161,15 +173,14 @@ button {
   to { transform: scale(1); opacity: 1; }
 }
 
-/* 💖 Floating Heart Animation */
+/* 💖 Floating Heart */
 .heart {
-  position: fixed;
+  position: absolute;
   width: 20px;
   height: 20px;
   background: url('https://i.imgur.com/ZLZzGzN.png') no-repeat center center;
   background-size: contain;
   animation: floatHearts 6s linear infinite;
-  z-index: 1;
   pointer-events: none;
   opacity: 0.8;
 }
