@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Happy Birthday RABO🎂</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <title>Happy Birthday RABO🎂</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Floating Hearts -->
-  <div id="heart-container"></div>
+  <!-- Floating Hearts -->
+  <div id="heart-container"></div>
 
-  <!-- Cover Image -->
-  <div class="cover-photo">
-    <img src="cover.jpg" alt="Cover Photo">
-  </div>
+  <!-- Cover Image -->
+  <div class="cover-photo">
+    <img src="cover.jpg" alt="Cover Photo">
+  </div>
 
-  <!-- Music Button -->
-  <button onclick="document.getElementById('song').play()">Play Birthday Song 🎵</button>
-  <audio id="song" src="birthday.mp3"></audio>
+  <!-- Music Button -->
+  <button onclick="document.getElementById('song').play()">Play Birthday Song 🎵</button>
+  <audio id="song" src="birthday.mp3"></audio>
 
-  <!-- Birthday Message -->
-  <div class="container">
-    <h1>🌻Happy Birthday RABO🌻</h1>
-    <p class="typewriter-text" id="message"></p><span class="cursor"></span>
-  </div>
+  <!-- Birthday Message -->
+  <div class="container">
+    <h1>🌻Happy Birthday RABO🌻</h1>
+    <p class="typewriter-text" id="message"></p><span class="cursor"></span>
+  </div>
 
-  <!-- Photo Gallery -->
-  <div class="gallery">
-    <img src="pic1.jpg" alt="Memory 1">
-    <img src="pic2.jpg" alt="Memory 2">
-    <img src="pic3.jpg" alt="Memory 3">
-    <img src="pic4.jpg" alt="Memory 4">
-    <img src="pic5.jpg" alt="Memory 5">
-  </div>
+  <!-- Photo Gallery -->
+  <div class="cinema-gallery">
+    <img src="pic1.jpg" alt="Memory 1">
+    <img src="pic2.jpg" alt="Memory 2">
+    <img src="pic3.jpg" alt="Memory 3">
+    <img src="pic4.jpg" alt="Memory 4">
+    <img src="pic5.jpg" alt="Memory 5">
+  </div>
 
-  <!-- Typewriter Script -->
-  <script>
-    const message = `you crazy piece of my peace.
+  <!-- Typewriter Script -->
+  <script>
+    const message = `you crazy piece of my peace.
 my princess, my rabo—
 You’re that rare human who showed up when I didn’t even know I needed someone.
 Not loud. Not dramatic. But real. Solid. Present.
@@ -71,31 +71,33 @@ But ik we will go through anything which comes in way as we always used to be
 Happy Birthday idiot!! 🎉 
 You have my heart 💖`;
 
-    let i = 0;
-    function typeWriter() {
-      if (i < message.length) {
-        document.getElementById("message").innerHTML += message.charAt(i);
-        i++;
-        setTimeout(typeWriter, 25);
-      }
-    }
-    typeWriter();
-  </script>
+    let i = 0;
+    function typeWriter() {
+      if (i < message.length) {
+        document.getElementById("message").innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeWriter, 25);
+      }
+    }
+    typeWriter();
+  </script>
 
-  <!-- Floating Hearts -->
-  <script>
-    const heartContainer = document.getElementById('heart-container');
-    function createHeart() {
-      const heart = document.createElement('div');
-      heart.classList.add('heart');
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = 4 + Math.random() * 2 + "s";
-      heart.innerHTML = "💖";
-      heartContainer.appendChild(heart);
-      setTimeout(() => heart.remove(), 6000);
-    }
-    setInterval(createHeart, 400);
-  </script>
+  <!-- Floating Heart Animation Script -->
+  <script>
+    const heartContainer = document.getElementById('heart-container');
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 4 + Math.random() * 2 + "s";
+      heart.innerHTML = "💖";
+      heartContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+
+    setInterval(createHeart, 400);
+  </script>
 
 </body>
 </html>
