@@ -1,22 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Happy Birthday!</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('photo1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      text-align: center;
+    }
+    .container {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 20px;
+      margin: 50px auto;
+      max-width: 90%;
+      width: 600px;
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .typewriter-text {
+      font-size: 18px;
+      line-height: 1.6;
+      white-space: pre-line;
+      text-align: left;
+    }
+    .cursor {
+      display: inline-block;
+      background-color: white;
+      width: 8px;
+      height: 18px;
+      margin-left: 5px;
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
+    }
+  </style>
 </head>
 <body>
-  <h1>🎉 Happy Birthday, Mitali! 🎉</h1>
-  <p>Wishing you a day filled with joy and love!</p>
 
-  <div class="gallery">
-    <img src="photo1.jpg">
-    <img src="photo2.jpg">
-  </div>
-
+  <!-- 🎵 Music -->
   <audio autoplay loop>
     <source src="birthday.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
   </audio>
 
-  <script src="script.js"></script>
+  <div class="container">
+    <h1>🎉 Happy Birthday! 🎂</h1>
+    <div class="typewriter-text" id="message"></div>
+    <span class="cursor" id="cursor"></span>
+  </div>
+
+  <script>
+    const paragraphs = [
+      "Happy Birthday, you crazy piece of my peace.\nMy princess, my rabo—",
+      "You’re that rare human who showed up when I didn’t even know I needed someone.\nNot loud. Not dramatic. But real. Solid. Present.",
+      "We’ve laughed over dumb things,\ntalked deep at 3 AM,\nand sometimes just sat in silence that said more than words ever could.",
+      "Your existence feels like a comfort playlist—\nOne that starts playing when the world feels too harsh for me.",
+      "On your birthday,\nI don’t wish for stars or luxury or random quotes to bless you.\nI wish you me 😁😁\nAnd yes, obviously… my nonsense thoughts, dumb reels, and maybe a little chaos you enjoy.",
+      "Keep being soft as you are.\nAnd don’t forget:\nNo matter how messy life gets,\nyou always have me —\n(Ik I have you too 😉)",
+      "The one who knows exactly how weird you are… and still chooses you every damn day.",
+      "Ik things aren’t going well.\nYou are mad at me.\nSorry for everything that’s making you stop talking to me.",
+      "But I know we’ll get through anything that comes our way —\njust like we always did.",
+      "(And if you even thought I forgot your birthday, take my virtual slap 👋🏻😒)",
+      "Happy Birthday, idiot!! 🎉\nYou have my heart. 💛"
+    ];
+
+    const messageEl = document.getElementById("message");
+    let currentParagraph = 0;
+    let currentChar = 0;
+
+    function typeWriter() {
+      if (currentParagraph < paragraphs.length) {
+        const currentText = paragraphs[currentParagraph];
+        if (currentChar < currentText.length) {
+          messageEl.innerHTML += currentText.charAt(currentChar);
+          currentChar++;
+          setTimeout(typeWriter, 30);
+        } else {
+          messageEl.innerHTML += "\n\n";
+          currentParagraph++;
+          currentChar = 0;
+          setTimeout(typeWriter, 800); // Pause before next paragraph
+        }
+      } else {
+        document.getElementById("cursor").style.display = "none";
+      }
+    }
+
+    // Start typing after page load
+    window.onload = typeWriter;
+  </script>
+
 </body>
 </html>
