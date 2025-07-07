@@ -11,6 +11,9 @@
 </head>
 <body>
 
+  <!-- 💖 Container for Floating Hearts -->
+  <div id="heart-container"></div>
+
   <!-- 🌄 Cover Photo -->
   <div class="cover-photo">
     <img src="cover.jpg" alt="Cover Photo">
@@ -40,14 +43,15 @@
     <img src="" id="lightbox-img" alt="Zoomed Photo">
   </div>
 
-  <!-- 💖 Floating Hearts -->
+  <!-- 💖 Floating Hearts Script -->
   <script>
+    const heartContainer = document.getElementById('heart-container');
     function createHeart() {
       const heart = document.createElement('div');
       heart.className = 'heart';
       heart.style.left = Math.random() * 100 + "vw";
       heart.style.animationDuration = 5 + Math.random() * 3 + "s";
-      document.body.appendChild(heart);
+      heartContainer.appendChild(heart);
       setTimeout(() => heart.remove(), 8000);
     }
     setInterval(createHeart, 500);
@@ -98,7 +102,7 @@ You have my heart 💖`;
     typeWriter();
   </script>
 
-  <!-- 🖼️ Lightbox JS -->
+  <!-- 🖼️ Lightbox Script -->
   <script>
     function openLightbox(src) {
       document.getElementById('lightbox-img').src = src;
