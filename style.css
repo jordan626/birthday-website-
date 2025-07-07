@@ -1,4 +1,3 @@
-/* General Page Styling */
 body {
   margin: 0;
   padding: 0;
@@ -10,7 +9,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Floating Heart Container */
+/* Floating hearts */
 #heart-container {
   position: fixed;
   top: 0;
@@ -22,33 +21,29 @@ body {
   overflow: hidden;
 }
 
-/* Heart Elements */
 .heart {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  background: url('https://i.imgur.com/ZLZzGzN.png') no-repeat center center;
-  background-size: contain;
-  animation: floatHearts 6s linear infinite;
+  font-size: 20px;
+  z-index: 0;
   opacity: 0.8;
+  animation: floatHearts 6s ease-in infinite;
 }
 
-/* Heart Animation */
 @keyframes floatHearts {
   0% {
-    transform: translateY(100vh) scale(0.5);
+    transform: translateY(0) scale(1);
     opacity: 0;
   }
   50% {
     opacity: 1;
   }
   100% {
-    transform: translateY(-10vh) scale(1);
+    transform: translateY(-100vh) scale(1.5);
     opacity: 0;
   }
 }
 
-/* Main Container for Text */
+/* Main content box */
 .container {
   background: rgba(0, 0, 0, 0.6);
   padding: 30px;
@@ -60,7 +55,6 @@ body {
   z-index: 10;
 }
 
-/* Main Heading */
 h1 {
   font-size: 36px;
   font-family: 'Pacifico', cursive;
@@ -69,7 +63,7 @@ h1 {
   text-shadow: 2px 2px 4px #000;
 }
 
-/* Typewriter Text Styling */
+/* Message text */
 .typewriter-text {
   font-size: 18px;
   font-style: italic;
@@ -80,7 +74,7 @@ h1 {
   text-shadow: 1px 1px 2px #000;
 }
 
-/* Cursor Blinking */
+/* Cursor */
 .cursor {
   display: inline-block;
   width: 10px;
@@ -97,7 +91,7 @@ h1 {
   50% { opacity: 0; }
 }
 
-/* Button Styling */
+/* Music Button */
 button {
   margin-bottom: 20px;
   padding: 10px 20px;
@@ -109,7 +103,7 @@ button {
   cursor: pointer;
 }
 
-/* Cover Photo */
+/* Cover Image */
 .cover-photo img {
   width: 100%;
   max-height: 400px;
@@ -124,7 +118,7 @@ button {
   to { opacity: 1; transform: scale(1); }
 }
 
-/* Photo Gallery */
+/* Gallery */
 .cinema-gallery {
   display: flex;
   flex-wrap: wrap;
