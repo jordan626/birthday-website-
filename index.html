@@ -2,151 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Birthday!</title>
-
-  <!-- Google Fonts -->
+  <title>Happy Birthday 🎂</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: url('photo1.jpg') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Quicksand', sans-serif;
-      color: #fff;
-      text-align: center;
-    }
-
-    .container {
-      background: rgba(0, 0, 0, 0.5);
-      padding: 30px;
-      border-radius: 20px;
-      margin: 50px auto;
-      max-width: 90%;
-      width: 600px;
-    }
-
-    h1 {
-      font-size: 40px;
-      font-family: 'Pacifico', cursive;
-      margin-bottom: 20px;
-      color: #ffd5ec;
-      text-shadow: 2px 2px 4px #000;
-    }
-
-    .typewriter-text {
-      font-size: 20px;
-      font-style: italic;
-      line-height: 1.7;
-      white-space: pre-line;
-      text-align: left;
-      color: #fff;
-      text-shadow: 1px 1px 2px #000;
-    }
-
-    .cursor {
-      display: inline-block;
-      width: 10px;
-      height: 24px;
-      margin-left: 5px;
-      background-color: #fff;
-      border-radius: 2px;
-      animation: blink 1s step-start infinite;
-      vertical-align: bottom;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-
-    button {
-      margin-bottom: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 10px;
-      background-color: #ffb6c1;
-      color: #000;
-      cursor: pointer;
-    }
-
-    /* 🌄 Cover Photo */
-    .cover-photo img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 0 0 20px 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      animation: fadeInCover 2s ease-in-out;
-    }
-
-    @keyframes fadeInCover {
-      from { opacity: 0; transform: scale(1.05); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    /* 🎞️ Cinematic Gallery */
-    .cinema-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin: 40px auto;
-      max-width: 1000px;
-    }
-
-    .cinema-gallery img {
-      width: 180px;
-      height: auto;
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-      opacity: 0;
-      transform: scale(0.8);
-      animation: fadeInUp 0.8s forwards;
-    }
-
-    .cinema-gallery img:nth-child(1) { animation-delay: 0.2s; }
-    .cinema-gallery img:nth-child(2) { animation-delay: 0.4s; }
-    .cinema-gallery img:nth-child(3) { animation-delay: 0.6s; }
-    .cinema-gallery img:nth-child(4) { animation-delay: 0.8s; }
-    .cinema-gallery img:nth-child(5) { animation-delay: 1s; }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-  <!-- 🌄 Cinematic Cover Photo -->
+  <!-- Floating hearts -->
+  <div id="heart-container"></div>
+
+  <!-- Cover Image -->
   <div class="cover-photo">
     <img src="cover.jpg" alt="Cover Photo">
   </div>
 
-  <!-- 🎂 Birthday Message -->
+  <!-- Music Button -->
+  <button onclick="document.getElementById('song').play()">Play Birthday Song 🎵</button>
+  <audio id="song" src="birthday.mp3"></audio>
+
+  <!-- Birthday Message -->
   <div class="container">
-    <h1>🎉 Happy Birthday! 🎂</h1>
-
-    <!-- 🎵 Music Button -->
-    <button onclick="document.getElementById('song').play()">🎵 Play Birthday Song</button>
-    <audio id="song" loop>
-      <source src="birthday.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-
-    <!-- 💌 Typewriter Message -->
-    <div class="typewriter-text" id="message"></div>
-    <span class="cursor" id="cursor"></span>
+    <h1>Happy Birthday</h1>
+    <p class="typewriter-text" id="message"></p><span class="cursor"></span>
   </div>
 
-  <!-- 🎞️ Animated 5-Photo Gallery -->
+  <!-- Photo Gallery -->
   <div class="cinema-gallery">
     <img src="pic1.jpg" alt="Memory 1">
     <img src="pic2.jpg" alt="Memory 2">
@@ -155,45 +36,64 @@
     <img src="pic5.jpg" alt="Memory 5">
   </div>
 
-  <!-- 🖋 Typewriter Script -->
+  <!-- Typewriter Script -->
   <script>
-    const paragraphs = [
-      "Happy Birthday, you crazy piece of my peace.\nMy princess, my rabo—",
-      "You’re that rare human who showed up when I didn’t even know I needed someone.\nNot loud. Not dramatic. But real. Solid. Present.",
-      "We’ve laughed over dumb things,\ntalked deep at 3 AM,\nand sometimes just sat in silence that said more than words ever could.",
-      "Your existence feels like a comfort playlist—\nOne that starts playing when the world feels too harsh for me.",
-      "On your birthday,\nI don’t wish for stars or luxury or random quotes to bless you.\nI wish you me 😁😁\nAnd yes, obviously… my nonsense thoughts, dumb reels, and maybe a little chaos you enjoy.",
-      "Keep being soft as you are.\nAnd don’t forget:\nNo matter how messy life gets,\nyou always have me —\n(Ik I have you too 😉)",
-      "The one who knows exactly how weird you are… and still chooses you every damn day.",
-      "Ik things aren’t going well.\nYou are mad at me.\nSorry for everything that’s making you stop talking to me.",
-      "But I know we’ll get through anything that comes our way —\njust like we always did.",
-      "(And if you even thought I forgot your birthday, take my virtual slap 👋🏻😒)",
-      "Happy Birthday, idiot!! 🎉\nYou have my heart. 💛"
-    ];
+    const message = `you crazy piece of my peace.
+my princess, my rabo—
+You’re that rare human who showed up when I didn’t even know I needed someone.
+Not loud. Not dramatic. But real. Solid. Present.
 
-    const messageEl = document.getElementById("message");
-    let currentParagraph = 0;
-    let currentChar = 0;
+We’ve laughed over dumb things,
+talked deep at 3 AM,
+and sometimes just sat in silence that said more than words ever could.
 
+Ur existence feels like a comfort playlist—
+One that starts playing when the world feels too harsh for me.
+
+On your birthday,
+I don’t wish for stars or luxury or random quotes to bless you.
+I wish you me 😁😁
+And yes, obviously… my nonsense thoughts, dumb reels, and maybe a little chaos u enjoy.
+
+Keep being soft as you are.
+And don’t forget:
+No matter how messy life gets,
+you always have me —
+(Ik I have you too 😉)
+the one who knows exactly how weird you are… and still chooses you every damn day.
+
+Ik things not going well
+You are mad at me 
+Sorry for everything which is making u stop from talking to me 
+But ik we will go through anything which comes in way as we always used to be 
+(And if you even have the thought that I forgot your birthday, take my virtual slap 👋🏻😒)
+
+Happy Birthday idiot!! 🎉 
+You have my heart 💖`;
+
+    let i = 0;
     function typeWriter() {
-      if (currentParagraph < paragraphs.length) {
-        const currentText = paragraphs[currentParagraph];
-        if (currentChar < currentText.length) {
-          messageEl.innerHTML += currentText.charAt(currentChar);
-          currentChar++;
-          setTimeout(typeWriter, 30);
-        } else {
-          messageEl.innerHTML += "\n\n";
-          currentParagraph++;
-          currentChar = 0;
-          setTimeout(typeWriter, 700);
-        }
-      } else {
-        document.getElementById("cursor").style.display = "none";
+      if (i < message.length) {
+        document.getElementById("message").innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeWriter, 25);
       }
     }
+    typeWriter();
+  </script>
 
-    window.onload = typeWriter;
+  <!-- Floating Hearts Script -->
+  <script>
+    const heartContainer = document.getElementById('heart-container');
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 5 + Math.random() * 3 + "s";
+      heartContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }
+    setInterval(createHeart, 500);
   </script>
 
 </body>
