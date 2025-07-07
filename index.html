@@ -4,13 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Happy Birthday!</title>
+  
+  <!-- ✨ Fancy Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
       padding: 0;
       background: url('photo1.jpg') no-repeat center center fixed;
       background-size: cover;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Quicksand', sans-serif;
       color: #fff;
       text-align: center;
     }
@@ -23,26 +27,34 @@
       width: 600px;
     }
     h1 {
-      font-size: 36px;
+      font-size: 40px;
+      font-family: 'Pacifico', cursive;
       margin-bottom: 20px;
+      color: #ffd5ec;
+      text-shadow: 2px 2px 4px #000;
     }
     .typewriter-text {
-      font-size: 18px;
-      line-height: 1.6;
+      font-size: 20px;
+      font-style: italic;
+      line-height: 1.7;
       white-space: pre-line;
       text-align: left;
+      color: #fff;
+      text-shadow: 1px 1px 2px #000;
     }
     .cursor {
       display: inline-block;
-      background-color: white;
-      width: 8px;
-      height: 18px;
+      width: 10px;
+      height: 24px;
       margin-left: 5px;
-      animation: blink 1s infinite;
+      background-color: #fff;
+      border-radius: 2px;
+      animation: blink 1s step-start infinite;
+      vertical-align: bottom;
     }
     @keyframes blink {
-      0%, 50%, 100% { opacity: 1; }
-      25%, 75% { opacity: 0; }
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
     }
   </style>
 </head>
@@ -55,7 +67,7 @@
   </audio>
 
   <div class="container">
-    <h1>🎉 Happy Birthday RABO! 🎂</h1>
+    <h1>🎉 Happy Birthday! 🎂</h1>
     <div class="typewriter-text" id="message"></div>
     <span class="cursor" id="cursor"></span>
   </div>
@@ -90,7 +102,7 @@
           messageEl.innerHTML += "\n\n";
           currentParagraph++;
           currentChar = 0;
-          setTimeout(typeWriter, 800); // Pause before next paragraph
+          setTimeout(typeWriter, 700); // Pause before next paragraph
         }
       } else {
         document.getElementById("cursor").style.display = "none";
