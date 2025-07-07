@@ -27,16 +27,16 @@
     <p class="typewriter-text" id="message"></p><span class="cursor"></span>
   </div>
 
-  <!-- Photo Gallery -->
-  <div class="cinema-gallery">
-    <img src="pic1.jpg" alt="Memory 1">
-    <img src="pic2.jpg" alt="Memory 2">
-    <img src="pic3.jpg" alt="Memory 3">
-    <img src="pic4.jpg" alt="Memory 4">
-    <img src="pic5.jpg" alt="Memory 5">
+  <!-- Stacked Photo Viewer -->
+  <div class="stack-container" id="stack">
+    <img src="pic5.jpg" class="stack-photo" alt="Memory 5">
+    <img src="pic4.jpg" class="stack-photo" alt="Memory 4">
+    <img src="pic3.jpg" class="stack-photo" alt="Memory 3">
+    <img src="pic2.jpg" class="stack-photo" alt="Memory 2">
+    <img src="pic1.jpg" class="stack-photo" alt="Memory 1">
   </div>
 
-  <!-- Typewriter Script -->
+  <!-- Typewriter Effect -->
   <script>
     const message = `you crazy piece of my peace.
 my princess, my rabo—
@@ -82,10 +82,9 @@ You have my heart 💖`;
     typeWriter();
   </script>
 
-  <!-- Floating Heart Animation Script -->
+  <!-- Floating Hearts -->
   <script>
     const heartContainer = document.getElementById('heart-container');
-
     function createHeart() {
       const heart = document.createElement('div');
       heart.classList.add('heart');
@@ -95,8 +94,19 @@ You have my heart 💖`;
       heartContainer.appendChild(heart);
       setTimeout(() => heart.remove(), 6000);
     }
-
     setInterval(createHeart, 400);
+  </script>
+
+  <!-- Stack Swipe Logic -->
+  <script>
+    const stack = document.getElementById('stack');
+    stack.addEventListener('click', () => {
+      const top = stack.querySelector('.stack-photo:last-child');
+      if (top) {
+        top.classList.add('swiped');
+        setTimeout(() => top.remove(), 700);
+      }
+    });
   </script>
 
 </body>
