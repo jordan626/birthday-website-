@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Happy Birthday 🎂</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Fonts -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- 💖 Container for Floating Hearts -->
+  <!-- Floating hearts go here -->
   <div id="heart-container"></div>
 
-  <!-- 🌄 Cover Photo -->
+  <!-- Cover Image -->
   <div class="cover-photo">
     <img src="cover.jpg" alt="Cover Photo">
   </div>
 
-  <!-- 🎶 Music Button -->
+  <!-- Music Play Button -->
   <button onclick="document.getElementById('song').play()">Play Birthday Song 🎵</button>
   <audio id="song" src="birthday.mp3"></audio>
 
-  <!-- 💌 Message Container -->
+  <!-- Birthday Message -->
   <div class="container">
-    <h1>Happy Birthday, you crazy piece of my peace</h1>
+    <h1>Happy Birthday</h1>
     <p class="typewriter-text" id="message"></p><span class="cursor"></span>
   </div>
 
-  <!-- 🖼️ Cinematic Gallery -->
+  <!-- Photo Gallery -->
   <div class="cinema-gallery">
     <img src="pic1.jpg" alt="Memory 1" onclick="openLightbox(this.src)">
     <img src="pic2.jpg" alt="Memory 2" onclick="openLightbox(this.src)">
@@ -38,28 +36,15 @@
     <img src="pic5.jpg" alt="Memory 5" onclick="openLightbox(this.src)">
   </div>
 
-  <!-- 🌌 Lightbox for zoom -->
+  <!-- Lightbox Viewer -->
   <div id="lightbox" onclick="this.style.display='none'">
     <img src="" id="lightbox-img" alt="Zoomed Photo">
   </div>
 
-  <!-- 💖 Floating Hearts Script -->
+  <!-- Typewriter Script -->
   <script>
-    const heartContainer = document.getElementById('heart-container');
-    function createHeart() {
-      const heart = document.createElement('div');
-      heart.className = 'heart';
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = 5 + Math.random() * 3 + "s";
-      heartContainer.appendChild(heart);
-      setTimeout(() => heart.remove(), 8000);
-    }
-    setInterval(createHeart, 500);
-  </script>
-
-  <!-- ⌨️ Typewriter Text Script -->
-  <script>
-    const message = `my princess, my rabo—
+    const message = `you crazy piece of my peace.
+my princess, my rabo—
 You’re that rare human who showed up when I didn’t even know I needed someone.
 Not loud. Not dramatic. But real. Solid. Present.
 
@@ -102,12 +87,26 @@ You have my heart 💖`;
     typeWriter();
   </script>
 
-  <!-- 🖼️ Lightbox Script -->
+  <!-- Lightbox Image Viewer -->
   <script>
     function openLightbox(src) {
       document.getElementById('lightbox-img').src = src;
       document.getElementById('lightbox').style.display = 'flex';
     }
+  </script>
+
+  <!-- Floating Hearts Animation -->
+  <script>
+    const heartContainer = document.getElementById('heart-container');
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 5 + Math.random() * 3 + "s";
+      heartContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }
+    setInterval(createHeart, 500);
   </script>
 
 </body>
