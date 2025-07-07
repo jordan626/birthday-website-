@@ -73,52 +73,89 @@
       cursor: pointer;
     }
 
-    .gallery {
-      margin-top: 40px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
+    /* 🌄 Cover Photo */
+    .cover-photo img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      animation: fadeInCover 2s ease-in-out;
     }
 
-    .gallery img {
+    @keyframes fadeInCover {
+      from { opacity: 0; transform: scale(1.05); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* 🎞️ Cinematic Gallery */
+    .cinema-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 40px auto;
+      max-width: 1000px;
+    }
+
+    .cinema-gallery img {
       width: 180px;
       height: auto;
       border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-      transition: transform 0.3s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      opacity: 0;
+      transform: scale(0.8);
+      animation: fadeInUp 0.8s forwards;
     }
 
-    .gallery img:hover {
-      transform: scale(1.05);
+    .cinema-gallery img:nth-child(1) { animation-delay: 0.2s; }
+    .cinema-gallery img:nth-child(2) { animation-delay: 0.4s; }
+    .cinema-gallery img:nth-child(3) { animation-delay: 0.6s; }
+    .cinema-gallery img:nth-child(4) { animation-delay: 0.8s; }
+    .cinema-gallery img:nth-child(5) { animation-delay: 1s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- 🌄 Cinematic Cover Photo -->
+  <div class="cover-photo">
+    <img src="cover.jpg" alt="Cover Photo">
+  </div>
+
+  <!-- 🎂 Birthday Message -->
   <div class="container">
     <h1>🎉 Happy Birthday! 🎂</h1>
 
-    <!-- Music Button -->
+    <!-- 🎵 Music Button -->
     <button onclick="document.getElementById('song').play()">🎵 Play Birthday Song</button>
     <audio id="song" loop>
       <source src="birthday.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
 
-    <!-- Typewriter Message -->
+    <!-- 💌 Typewriter Message -->
     <div class="typewriter-text" id="message"></div>
     <span class="cursor" id="cursor"></span>
-
-    <!-- Photo Gallery -->
-    <div class="gallery">
-      <img src="photo1.jpg" alt="Memory 1">
-      <img src="photo2.jpg" alt="Memory 2">
-      <img src="photo3.jpg" alt="Memory 3">
-    </div>
   </div>
 
-  <!-- Typewriter Script -->
+  <!-- 🎞️ Animated 5-Photo Gallery -->
+  <div class="cinema-gallery">
+    <img src="pic1.jpg" alt="Memory 1">
+    <img src="pic2.jpg" alt="Memory 2">
+    <img src="pic3.jpg" alt="Memory 3">
+    <img src="pic4.jpg" alt="Memory 4">
+    <img src="pic5.jpg" alt="Memory 5">
+  </div>
+
+  <!-- 🖋 Typewriter Script -->
   <script>
     const paragraphs = [
       "Happy Birthday, you crazy piece of my peace.\nMy princess, my rabo—",
@@ -158,5 +195,6 @@
 
     window.onload = typeWriter;
   </script>
+
 </body>
 </html>
