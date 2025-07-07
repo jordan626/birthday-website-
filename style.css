@@ -1,33 +1,117 @@
+/* 🌍 General Body Styling */
 body {
   margin: 0;
-  font-family: 'Comic Sans MS', cursive;
+  padding: 0;
+  background: url('photo1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Quicksand', sans-serif;
+  color: #fff;
   text-align: center;
-  background: linear-gradient(to bottom right, #fbc2eb, #a6c1ee);
-  color: white;
-  padding: 20px;
 }
 
+/* 🎁 Main Container for Message */
+.container {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 20px;
+  margin: 50px auto;
+  max-width: 90%;
+  width: 600px;
+}
+
+/* 🎉 Title */
 h1 {
-  font-size: 2.5em;
-  margin-top: 30px;
-  animation: bounce 2s infinite;
+  font-size: 40px;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 20px;
+  color: #ffd5ec;
+  text-shadow: 2px 2px 4px #000;
 }
 
-p {
-  font-size: 1.2em;
-  margin-bottom: 30px;
+/* 📝 Typewriter Text */
+.typewriter-text {
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.7;
+  white-space: pre-line;
+  text-align: left;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
 }
 
-.gallery img {
-  width: 80%;
-  max-width: 300px;
-  margin: 10px auto;
-  display: block;
+/* ⌨️ Blinking Cursor */
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 24px;
+  margin-left: 5px;
+  background-color: #fff;
+  border-radius: 2px;
+  animation: blink 1s step-start infinite;
+  vertical-align: bottom;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* 🔘 Music Button */
+button {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffb6c1;
+  color: #000;
+  cursor: pointer;
+}
+
+/* 🌄 Cover Photo */
+.cover-photo img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  animation: fadeInCover 2s ease-in-out;
+}
+
+@keyframes fadeInCover {
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* 🎞️ Cinematic Gallery */
+.cinema-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 40px auto;
+  max-width: 1000px;
+}
+
+.cinema-gallery img {
+  width: 180px;
+  height: auto;
   border-radius: 15px;
-  box-shadow: 0 0 10px #00000080;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeInUp 0.8s forwards;
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+.cinema-gallery img:nth-child(1) { animation-delay: 0.2s; }
+.cinema-gallery img:nth-child(2) { animation-delay: 0.4s; }
+.cinema-gallery img:nth-child(3) { animation-delay: 0.6s; }
+.cinema-gallery img:nth-child(4) { animation-delay: 0.8s; }
+.cinema-gallery img:nth-child(5) { animation-delay: 1s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
